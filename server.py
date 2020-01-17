@@ -1,5 +1,6 @@
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 import json
+from os import environ
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -16,7 +17,7 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(json_body.encode('utf_8'))
 
 try:
-    PORT = 8000
+    PORT = environ.get('PORT', 5000)
     server = ThreadingHTTPServer(('', PORT), Handler)
     print('Server started on {}'.format(PORT))
     server.serve_forever()
