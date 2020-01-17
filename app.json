@@ -1,0 +1,16 @@
+{
+    "name": "Start on Heroku: Python",
+    "description": "A barebones Python app, which can easily be deployed to Heroku.",
+    "image": "heroku/python",
+    "repository": "https://github.com/Dewbud/CTN4713-assignment2",
+    "keywords": ["python" ],
+    "addons": [],
+    "env": { },
+    "environments": {
+      "test": {
+        "scripts": {
+          "test": "python ./src/server.py"
+        }
+      }
+    }
+  }
