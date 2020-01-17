@@ -16,7 +16,7 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(json_body.encode('utf_8'))
 
 try:
-    PORT = 80
+    PORT = 8000
     server = ThreadingHTTPServer(('', PORT), Handler)
     print('Server started on {}'.format(PORT))
     server.serve_forever()
